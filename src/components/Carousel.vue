@@ -1,6 +1,6 @@
 <template>
   <div
-    class="pt-8 pb-24 flex carousel bg-gray-100 overflow-x-hidden space-x-8 lg:px-96"
+    class="pt-8 pb-24 flex carousel bg-gray-100 overflow-x-scroll space-x-8 lg:px-96"
     @mousedown="mouseDownHandler"
     @mousemove="mouseMoveHandler"
     @touchstart="mouseDownHandler"
@@ -11,6 +11,7 @@
     ref="scroll"
   >
     <Card v-for="plan in plans" :ref="pushCard" :plan="plan"></Card>
+    <div class="ml-96 px-96"></div>
   </div>
 </template>
 
@@ -79,7 +80,7 @@ export default {
           const dx = e.clientX - this.pos.x;
           const dy = e.clientY - this.pos.y;
           this.target.scrollTop = this.pos.top - dy;
-          this.target.scrollLeft = this.pos.left - dx;
+          this.target.scrollLeft = this.pos.left - dx * 2.5;
         }
 
       }
@@ -87,7 +88,7 @@ export default {
     step() {
       const lerp = 0.1;
       if (this.pos) return;
-      if (this.$refs.scroll && this.target && document.body.getBoundingClientRect().width > 640) {
+      if (this.$refs.scroll && this.target) {
         this.scrollx = this.$refs.scroll.scrollLeft;
         var closetEdge = 999999;
         if (this.closetEdgeLeftLost != null && !this.closetEdgeLeftLost) {
