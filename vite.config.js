@@ -9,16 +9,14 @@ export default defineConfig({
   plugins: [
     vue(),
     // https://github.com/vuetifyjs/vuetify-loader/tree/next/packages/vite-plugin
-    vuetify({
-      autoImport: true,
-    }),
+    vuetify(),
   ],
-  define: { 'process.env': {} },
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, 'src'),
-    },
-  },
+  // define: { 'process.env': {} },
+  // resolve: {
+  //   alias: {
+  //     '@': path.resolve(__dirname, 'src'),
+  //   },
+  // },
   /* remove the need to specify .vue files https://vitejs.dev/config/#resolve-extensions
   resolve: {
     extensions: [
