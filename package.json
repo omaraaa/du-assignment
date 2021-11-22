@@ -4,7 +4,8 @@
   "scripts": {
     "serve": "vite preview",
     "build": "vite build",
-    "dev": "vite"
+    "dev": "vite",
+    "deploy": "cd dist && git add . && git commit -m `build` && git push origin main"
   },
   "dependencies": {
     "@mdi/font": "5.9.55",

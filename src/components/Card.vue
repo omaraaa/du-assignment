@@ -47,7 +47,7 @@
         </div>
 
         <v-divider></v-divider>
-        <div class="flex-grow flex flex-col space-y-2 m-2 overflow-y-scroll md:overflow-y-hidden">
+        <div class="flex-grow flex flex-col space-y-2 m-2 overflow-y-auto">
           <div v-for="benfit in plan.benfits">
             <v-icon class="text-sm grey-text">mdi-check</v-icon>
             <span class="ml-2 text-sm grey-text">{{ benfit }}</span>
@@ -168,7 +168,7 @@ v-icon {
 .card {
   min-width: 300px;
   max-width: 400px;
-  max-height: 540px;
+  max-height: 580px;
   scroll-snap-align: start;
 }
 

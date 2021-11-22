@@ -73,8 +73,8 @@
         ],
         "limited_offer": true
     },    {
-        "name": "Power Plan 1000",
-        "payment": "AED 1000",
+        "name": "Power Plan 1234",
+        "payment": "AED 1234",
         "data": "Unlimited",
         "data_was": "120",
         "mins": "Unlimited",
@@ -89,8 +89,8 @@
         "limited_offer": true
     },
     {
-        "name": "Power Plan 1000",
-        "payment": "AED 1000",
+        "name": "Power Plan 2021",
+        "payment": "AED 2021",
         "data": "Unlimited",
         "data_was": "120",
         "mins": "Unlimited",

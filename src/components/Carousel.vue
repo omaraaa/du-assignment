@@ -1,6 +1,6 @@
 <template>
   <div
-    class="pt-8 pb-24 flex carousel bg-gray-100 overflow-x-hidden sm:overflow-x-scroll space-x-8 lg:px-96 h-1/2"
+    class="pt-8 pb-24 flex carousel bg-gray-50 overflow-x-hidden sm:overflow-x-scroll space-x-8 lg:px-96"
     @mousedown="mouseDownHandler"
     @mousemove="mouseMoveHandler"
     @touchstart="mouseDownHandler"
@@ -38,7 +38,7 @@ export default {
 
         this.pos = null;
       };
-
+      this.vel_x = 0;
       if (e instanceof MouseEvent) {
         this.pos = {
           // The current scroll
