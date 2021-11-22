@@ -1,6 +1,6 @@
 <template>
   <div
-    class="pt-8 pb-24 flex carousel bg-gray-100 overflow-x-scroll space-x-8 lg:px-96"
+    class="pt-8 pb-24 flex carousel bg-gray-100 overflow-x-hidden sm:overflow-x-scroll space-x-8 lg:px-96 h-1/2"
     @mousedown="mouseDownHandler"
     @mousemove="mouseMoveHandler"
     @touchstart="mouseDownHandler"
@@ -11,7 +11,7 @@
     ref="scroll"
   >
     <Card v-for="plan in plans" :ref="pushCard" :plan="plan"></Card>
-    <div class="ml-96 px-96"></div>
+    <div class="ml-64 px-64"></div>
   </div>
 </template>
 
@@ -19,10 +19,6 @@
 <script lang="ts">
 import Card from './Card.vue'
 import plans from '../assets/plans.json';
-
-function mouseUpHandler(e: any) {
-
-}
 
 export default {
   components: {
@@ -75,45 +71,30 @@ export default {
           const dx = e.touches[0].clientX - this.pos.x;
           const dy = e.touches[0].clientY - this.pos.y;
           this.target.scrollTop = this.pos.top - dy;
+
+          this.vel_x = this.pos.left - dx - this.target.scrollLeft;
           this.target.scrollLeft = this.pos.left - dx;
         } else {
           const dx = e.clientX - this.pos.x;
           const dy = e.clientY - this.pos.y;
           this.target.scrollTop = this.pos.top - dy;
-          this.target.scrollLeft = this.pos.left - dx * 2.5;
+          this.vel_x = this.pos.left - dx - this.target.scrollLeft;
+          this.target.scrollLeft = this.pos.left - dx;
         }
 
       }
     },
     step() {
       const lerp = 0.1;
-      if (this.pos) return;
-      if (this.$refs.scroll && this.target) {
-        this.scrollx = this.$refs.scroll.scrollLeft;
-        var closetEdge = 999999;
-        if (this.closetEdgeLeftLost != null && !this.closetEdgeLeftLost) {
-          var left = Math.abs(this.target.scrollLeft - this.closetEdgeLeft);
-          if (left > 100) {
-            this.closetEdgeLeftLost = true;
-          }
-
-        }
-        if (this.closetEdgeLeftLost == null || this.closetEdgeLeftLost) {
-          this.closetEdgeLeft = 0;
-          for (var i in this.cards) {
-            var left = Math.abs(this.target.scrollLeft - this.cards[i].card.$el.offsetLeft);
-            if (left < closetEdge) {
-              closetEdge = left;
-              this.closetEdgeLeft = this.cards[i].card.$el.offsetLeft;
-              this.closetEdgeLeftLost = false;
-            }
-          }
-        }
-        this.$refs.scroll.scrollLeft = this.$refs.scroll.scrollLeft * (1 - lerp) + (this.closetEdgeLeft) * lerp;
-
-        this.handleOpacity();
-        window.requestAnimationFrame(() => { this.step() });
+      const friction = 0.01;
+      if (this.target) {
+        this.target.scrollLeft += this.vel_x * (1 - friction);
+        this.vel_x = Math.sign(this.vel_x) * Math.abs(this.vel_x) * (1 - friction);
+        if (this.pos) return;
+        if (Math.abs(this.vel_x) < 1) return;
       }
+      window.requestAnimationFrame(() => { this.step() });
+
     },
 
     handleOpacity() {
@@ -147,5 +128,6 @@ export default {
 
 <style>
 .carousel {
+  scroll-snap-type: mandatory;
 }
 </style>

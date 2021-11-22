@@ -168,6 +168,8 @@ v-icon {
 .card {
   min-width: 300px;
   max-width: 400px;
+  max-height: 540px;
+  scroll-snap-align: start;
 }
 
 .card-bg-grad {
