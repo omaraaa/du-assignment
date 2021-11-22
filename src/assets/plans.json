@@ -1,0 +1,109 @@
+[
+    {
+        "name": "Power Plan 125",
+        "payment": "AED 125",
+        "data": "4 GB",
+        "mins": "100",
+        "benfits": [
+            "No activation fee. Save AED 125",
+            "4 GB free data on WiFi UAE"
+        ]
+    },
+    {
+        "name": "Power Plan 200",
+        "payment": "AED 200",
+        "data": "26 GB",
+        "data_was": "13",
+        "double": true,
+        "mins": "400",
+        "benfits": [
+            "No activation fee. Save AED 125",
+            "15 GB free data on WiFi UAE",
+            "Carry over data to next month"
+        ],
+        "limited_offer": true,
+        "popular": true
+    },
+    {
+        "name": "Power Plan 300",
+        "payment": "AED 300",
+        "data": "50 GB",
+        "data_was": "25",
+        "double": true,
+        "mins": "1020",
+        "benfits": [
+            "No activation fee. Save AED 125",
+            "25 GB free data on WiFi UAE",
+            "Carry over data to next month",
+            "Amazon Prime on us",
+            "Free Internet Calling Pack"
+        ],
+        "limited_offer": true
+    },
+    {
+        "name": "Power Plan 500",
+        "payment": "AED 500",
+        "data": "100 GB",
+        "data_was": "50",
+        "double": true,
+        "mins": "1500",
+        "benfits": [
+            "No activation fee. Save AED 125",
+            "100 GB free data on WiFi UAE",
+            "Carry over data to next month",
+            "Amazon Prime on us",
+            "Free Internet Calling Pack",
+            "Roaming 2 GB"
+        ],
+        "limited_offer": true
+    },
+    {
+        "name": "Power Plan 1000",
+        "payment": "AED 1000",
+        "data": "Unlimited",
+        "data_was": "120",
+        "mins": "Unlimited",
+        "benfits": [
+            "No activation fee. Save AED 125",
+            "100 GB free data on WiFi UAE",
+            "Carry over data to next month",
+            "Amazon Prime on us",
+            "Free Internet Calling Pack",
+            "Roaming 2 GB"
+        ],
+        "limited_offer": true
+    },    {
+        "name": "Power Plan 1000",
+        "payment": "AED 1000",
+        "data": "Unlimited",
+        "data_was": "120",
+        "mins": "Unlimited",
+        "benfits": [
+            "No activation fee. Save AED 125",
+            "100 GB free data on WiFi UAE",
+            "Carry over data to next month",
+            "Amazon Prime on us",
+            "Free Internet Calling Pack",
+            "Roaming 2 GB"
+        ],
+        "limited_offer": true
+    },
+    {
+        "name": "Power Plan 1000",
+        "payment": "AED 1000",
+        "data": "Unlimited",
+        "data_was": "120",
+        "mins": "Unlimited",
+        "benfits": [
+            "No activation fee. Save AED 125",
+            "100 GB free data on WiFi UAE",
+            "Carry over data to next month",
+            "Amazon Prime on us",
+            "Free Internet Calling Pack",
+            "Roaming 2 GB",
+            "Roaming 2 GB",
+            "Roaming 2 GB"
+        ],
+        "limited_offer": true
+    }
+]
