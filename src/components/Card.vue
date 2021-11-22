@@ -47,9 +47,7 @@
         </div>
 
         <v-divider></v-divider>
-        <div
-          class="flex-grow flex flex-col space-y-2 m-2 overflow-y-scroll md:overflow-y-hidden sm:max-h-32 md:max-h-full"
-        >
+        <div class="flex-grow flex flex-col space-y-2 m-2 overflow-y-scroll md:overflow-y-hidden">
           <div v-for="benfit in plan.benfits">
             <v-icon class="text-sm grey-text">mdi-check</v-icon>
             <span class="ml-2 text-sm grey-text">{{ benfit }}</span>

@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import App from './App.vue'
+import Carousel from './components/Carousel.vue'
 import vuetify from './plugins/vuetify'
 import { loadFonts } from './plugins/webfontloader'
 
@@ -8,7 +8,7 @@ import './index.css'
 loadFonts()
 
 
-createApp(App)
+createApp(Carousel)
   .use(vuetify)
   .mount('#app')
 

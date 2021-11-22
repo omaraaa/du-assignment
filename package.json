@@ -10,7 +10,6 @@
     "@mdi/font": "5.9.55",
     "@vue/cli": "^4.5.15",
     "roboto-fontface": "*",
-    "slick-carousel": "^1.8.1",
     "vue": "^3.2.16",
     "vuetify": "^3.0.0-alpha.0",
     "webfontloader": "^1.0.0"
